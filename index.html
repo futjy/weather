@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="stylemeteocards.min.css">
+  <link rel="stylesheet" href="multipagescroll.css">
+
+  <title>meteo france</title>
+</head>
+
+<body>
+
+
+
+
+  <!-- voici pour commencer le code html du scroll ou nous allons implanter d'autre code html pour y metre du design -->
+  <div class="scene">
+    <div class="page page-1 active">
+      <div class="half left">
+        <!-- debut de la navbar sur la premiere page qui sera notre premiere implatation de code html-->
+        <nav class="navbar navbar-light">
+          <form class="form-inline">
+            <input id="country" name="input" class="form-control mr-sm-2" type="search" placeholder="city"
+              aria-label="Search">
+            <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+        <!-- fin navbar de la premiere page-->
+
+        <!-- ensuite le debut du code de cards qui fait appel au ID enregistré dans le dossier meteo.js -->
+        <div id="app" class="container">
+          <card data-image="assets/images/city.JPG">
+            <h1 slot="header"><i class="far fa-building"></i></h1>
+            <p id="city" slot="content"></p>
+          </card>
+
+          <card data-image="assets/images/sun.JPG">
+            <h1 slot="header"><i class="fas fa-temperature-high"></i></h1>
+            <p id="temp" slot="content"></p>
+          </card>
+
+          <card data-image="assets/images/wind.JPEG">
+            <h1 slot="header"><i class="fas fa-wind"></i></h1>
+            <p id="wind" slot="content"></p>
+          </card>
+
+          <card data-image="assets/images/sunny.JPG">
+            <h1 slot="header"><i class="far fa-sun"></i></h1>
+            <p id="picture" slot="content"></p>
+          </card>
+        </div>
+        <!-- fin du code de cards continuons avec le code html du scroll ci-dessous-->
+
+      </div>
+      <div class="half right withText">
+        <h2 class="heading">Weather</h2>
+      </div>
+    </div>
+    <div class="page page-2">
+      <div class="half left withText">
+        <h2 class="heading">hour by hour</h2>
+      </div>
+      <div class="half right">
+
+        <!-- ici se trouve une div qui fait appel a une boucle dans le dossier meteo.js qui fait appel a plusieurs information sur 24h -->
+        <div id="hour" class="container"></div>
+        <!-- fin de la div pour chaque heure reprise du code scroll-->
+
+      </div>
+    </div>
+    <div class="page page-3">
+      <div class="half left">
+        <!-- ici le meme principe que pour chaque heure dans le meme dossier (meteo.js) mais pour une prevision de 4 jours-->
+        <div id="days" class="container"></div>
+        <!-- reprise du code scroll -->
+      </div>
+      <div class="half right withText">
+        <h2 class="heading">day by day </h2>
+      </div>
+    </div>
+  </div>
+  <div class="nav-panel">
+    <div class="scroll-btn up"></div>
+    <div class="scroll-btn down"></div>
+    <nav>
+      <ul>
+        <li data-target="1" class="nav-btn nav-page1 active"></li>
+        <li data-target="2" class="nav-btn nav-page2"></li>
+        <li data-target="3" class="nav-btn nav-page3"></li>
+
+      </ul>
+    </nav>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="meteo.js"></script>
+  <script src="designcards.js"></script>
+  
+  <script src="tilt.jquery.js"></script>
+  <script src="designscroll.js"></script>
+</body>
+
+</html>
