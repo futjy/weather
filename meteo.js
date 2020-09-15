@@ -17,7 +17,7 @@
                  let html = "";
                  for (i = 0; i < hourByHour.length; i++) {
                      const [hour, data, ] = hourByHour[i];
-                     html += '<card class="littlecards" data-image="assets/images/sea.JPG">'+'<h1 slot="header">'+'<img src="'+ data.ICON +'"></img>'+ hour + " " + data.CONDITION + " " + data.TMP2m + "°"+'</h1>' + '</card>';
+                     html += '<card class="littlecards" data-image="assets/images/sea.jpeg">'+'<h1 slot="header">'+'<img src="'+ data.ICON +'"></img>'+ hour + " " + data.CONDITION + " " + data.TMP2m + "°"+'</h1>' + '</card>';
                  };
                 document.querySelector("#hour").innerHTML = html;
                 const app = new Vue({
