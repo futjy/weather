@@ -1,2 +1,2 @@
 # weather
-[hahaha] (https://futjy.github.io/weather/index.html)
+[meteo](https://futjy.github.io/weather/index.html)
